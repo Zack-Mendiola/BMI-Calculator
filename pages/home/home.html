@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Body Mass Index Calculator</h2>
+  <p>
+    Body Mass Index (BMI) is a measurement of a person’s weight with respect to his or her height. It is more of an indicator than a direct measurement of a person’s total body fat.
+  </p>
+  <p>
+    <a> Source: https://www.news-medical.net/health/What-is-Body-Mass-Index-(BMI).aspx </a>
+  </p>
+
+  
+ <p>
+<ion-item>
+  <ion-label>Height in Meters:</ion-label>
+  <ion-input type="number" [(ngModel)]="height"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Weight in Kilograms: </ion-label>
+  <ion-input type="number" [(ngModel)]="weight"></ion-input>                                   
+</ion-item>
+
+<button ion-button color="secondary" (click)="calculateBMI()">CALCULATE</button>
+
+<ion-item *ngIf="bmi">
+    <h2>Your BMI is: {{bmi}} <code> ({{bmiMessage}})</code></h2>
+</ion-item>
+  </p>
+
+</ion-content>
